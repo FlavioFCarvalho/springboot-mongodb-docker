@@ -6,12 +6,12 @@ Steps & Commands
 
 - pull mongo image from docker hub -> docker pull mongo:latest
 - run mongo image -> docker run -d -p 27017:27017 --name javatechiemongodb mongo:latest
-- dockerize spring boot application docker build -t springboot-mongodb:1.0 .
-- run spring boot docker image and link that container to mongo container docker run -p 8080:8080 --name springboot-mongodb --link javatechiemongodb:mongo -d springboot-mongodb:1.0
+- dockerize spring boot application -> docker build -t springboot-mongodb:1.0 .
+- run spring boot docker image and link that container to mongo container -> docker run -p 8080:8080 --name springboot-mongodb --link javatechiemongodb:mongo -d springboot-mongodb:1.0
 - check docker running containers docker ps it should display two container ids
 - check logs of spring boot image docker logs springboot-mongodb
 - if all good access your api 🎉
-curl --location --request POST 'http://localhost:8080/books' \
+curl --location --request POST 'http://localhost:8080/books' \ or use postman
 --header 'Content-Type: application/json' \
 --data-raw '{
     "id":1,
@@ -19,7 +19,7 @@ curl --location --request POST 'http://localhost:8080/books' \
     "authorName":"Basant"
 }'
 
- login to mongo terminal to verify records docker exec -it javatechiemongodb bash
+- login to mongo terminal to verify records docker exec -it javatechiemongodb bash
 type mongo and enter
 show dbs
 use book
