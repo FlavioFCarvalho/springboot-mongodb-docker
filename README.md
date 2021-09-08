@@ -20,29 +20,14 @@ curl --location --request POST 'http://localhost:8080/books' \
 }'
 or use postman
 - login to mongo terminal to verify records docker exec -it javatechiemongodb bash
- * type mongo and enter
-show dbs
-use book
-show collections
-db.book.find().pretty()
-Use Docker Compose
+  - type mongo and enter
+  - show dbs
+  - use book
+  - show collections
+  - db.book.find().pretty()
 
- Kill running container:
-docker rm <containerId>
-docker-compose.yml
-version: "3"
-services:
-  javatechiemongodb:
-    image: mongo:latest
-    container_name: "javatechiemongodb"
-    ports:
-      - 27017:27017
-  springboot-mongodb:
-    image: springboot-mongodb:1.0
-    container_name: springboot-mongodb
-    ports:
-      - 8080:8080
-    links:
-      - javatechiemongodb
- navigate to resources folder:
+
+
+
+- navigate to resources folder: 
 springboot-mongo-docker/src/main/resources and run docker-compose up
