@@ -11,16 +11,16 @@ Steps & Commands
 - check docker running containers docker ps it should display two container ids
 - check logs of spring boot image docker logs springboot-mongodb
 - if all good access your api 🎉
-curl --location --request POST 'http://localhost:8080/books' \ or use postman
+curl --location --request POST 'http://localhost:8080/books' \ 
 --header 'Content-Type: application/json' \
 --data-raw '{
     "id":1,
     "bookName":"corejava",
     "authorName":"Basant"
 }'
-
+or use postman
 - login to mongo terminal to verify records docker exec -it javatechiemongodb bash
-type mongo and enter
+ * type mongo and enter
 show dbs
 use book
 show collections
